@@ -19,3 +19,9 @@ Operators:
 
  preincrement operator (++a): increment a instantly.
  post increment operator (a++): current value of a is preserved temporarily, a will be incremented before next statement execution.
+
+ Function calls:
+
+   1.) When the function is called, the function signature and local variables are stored as stack frame in LIFO order in the memory.
+       Top most frame is the active frame. When function is getting called, it will be added as frame to memory stack and if function 
+       returns- frame will be popped from memory stack.
