@@ -10,3 +10,11 @@ char -> 1 bytes.
 bool -> 1 bytes.
 unsigned integer range :  0 to 2 ^32 -1 
 signd integer range : -(2 ^ 31) to (2 ^ 31 - 1) 
+
+Operators:
+
+1.) Binary operators: +, - ,*,/, %
+2.) Unary operator:  ++, --
+
+ preincrement operator (++a): increment a instantly.
+ post increment operator (a++): current value of a is preserved temporarily, a will be incremented before next statement execution.
