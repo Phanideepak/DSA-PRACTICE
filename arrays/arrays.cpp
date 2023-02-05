@@ -34,5 +34,11 @@ int main(){
     }
     cin >> key;
     cout<<"sum: "<<sum(array,n)<<endl;
-    cout<<"element found at index :"<<search(array,n,)<<endl;
+
+    int found = search(array,n,key);
+
+    if (found > 0)
+      cout<<"element found at index :"<<search(array,n,key)<<endl;
+    else
+      cout<< "element not found "<<endl;
 }
