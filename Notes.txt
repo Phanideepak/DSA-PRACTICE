@@ -15,6 +15,7 @@ Operators:
 
 1.) Binary operators: +, - ,*,/, %
 2.) Unary operator:  ++, --
+3.) Bitwise operator: &, |, ^,~  (operates on bits ) (AND,OR,XOR,ones complement)
 
  preincrement operator (++a): increment a instantly.
  post increment operator (a++): current value of a is preserved temporarily, a will be incremented before next statement execution.
