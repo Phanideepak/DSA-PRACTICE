@@ -1,0 +1,12 @@
+Data types:
+
+1.) Primitive type: int, float, char, boolean, short int, long int.
+2.) Derived type: Function, array, pointer, reference.
+3.) User defined: class, structure, union, enum
+
+1 bytes = 8 bits.
+Int -> 4 bytes.
+char -> 1 bytes.
+bool -> 1 bytes.
+unsigned integer range :  0 to 2 ^32 -1 
+signd integer range : -(2 ^ 31) to (2 ^ 31 - 1) 
