@@ -25,3 +25,19 @@ Operators:
    1.) When the function is called, the function signature and local variables are stored as stack frame in LIFO order in the memory.
        Top most frame is the active frame. When function is getting called, it will be added as frame to memory stack and if function 
        returns- frame will be popped from memory stack.
+
+
+ Time Complexity:
+
+ 1.) Indicates the time taken by algorithm to execute as funciton of input length.
+
+ Space Complexity:
+ 1.) Corresponding to largest memory acquired by program at run time.
+
+ Worst case -(big oh) notation
+ Best case - (big omega) notation
+ Average case - (big theta notation)
+
+ Data types:
+
+ 1.) Array: It is list of variable of same type.
