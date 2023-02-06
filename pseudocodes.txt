@@ -16,3 +16,30 @@ def binary_search(n,l,r,key)
 Selection sort:
 
 def: Selection Sort: Select the minimum element in unsorted array and swap it with element at beginning.
+
+
+Bubble sort:
+
+def: Bubble sort:  Swap the adjacent elements if they are in wrong order.
+
+def bubble_sort(a,n):
+   for(i=0; i<n-1;i++)
+      for (j=i+1;j<n;j++)
+         if a[i]>a[j]:
+            swap(a[i],a[j])
+
+
+Insertion sort:
+
+def: Insertion sort: Insert an element from unsorted array to its correct position in sorted array.
+
+procedure insertionSort(A: list of sortable items)
+   n = length(A)
+   for i = 1 to n - 1 do
+       j = i
+       while j > 0 and A[j-1] > A[j] do
+           swap(A[j], A[j-1])
+           j = j - 1
+       end while
+   end for
+end procedure
