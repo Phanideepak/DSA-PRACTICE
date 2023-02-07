@@ -14,3 +14,7 @@
 5.) Find first repeating element of array. (element with least first occurence index)   
 
 PENDING PROBLEM SECTIONS: 8.5, 8.6 (https://www.youtube.com/watch?v=0JYgnhnZFcE&list=PLfqMhTWNBTe0b2nM6JHVCnAkhQRGiZMSJ&index=25)
+
+6.) Subarray with given sum. (** pending **)
+
+7.) Smallest positive missing number in an array of n elements including zero.

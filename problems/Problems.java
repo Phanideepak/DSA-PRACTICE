@@ -49,10 +49,32 @@ class Problems{
         }
         System.out.println("answer : "+ max);
     }
-
+    
+    /**Create an array index[max_element], store the first occurences of element in that array. 
+       on second occurnce, store the first occurence value in answer variable.
+       answer = min(answer)
+    **/
     static void find_first_repeating_element(int[] arr, int n){
         System.out.println("find_first_repeating_element");
-        
+        int answer = Integer.MAX_VALUE;
+        int max_element = Integer.MIN_VALUE;
+        for(int i =0;i<n;i++){
+            if(arr[i] > max_element) max_element = arr[i];
+        }
+        int []index = new int[max_element+1];
+        for(int i=0;i<=max_element;i++){
+            index[i] = -1;
+        }
+        for(int i =0;i<n;i++){
+             if(index[arr[i]] < 0){
+                index[arr[i]] = i;
+             } else {
+                if(answer > index[arr[i]])
+                   answer = index[arr[i]];
+             }
+        }
+        System.out.println("answer : "+answer);
+
     }
 
     static void count_element_greater_than_previous_elements_and_following(int[] a , int n){
@@ -71,15 +93,72 @@ class Problems{
         System.out.println("count :"+count);
     }
 
+    /** optmised.
+     * Important.
+     */
+    static void subarray_with_given_sum(int[] arr, int n, int sum){
+        System.out.println("subarray_with_given_sum");
+        int i,j = 0;
+        int total = 0;
+    }
+
+    static void find_missing_positive_number(int[] arr, int n){
+        int max = Integer.MIN_VALUE;
+        for(int i = 0; i<n;i++){
+            if(arr[i] > 0 && arr[i] > max){
+                max = arr[i];
+            }
+        }
+        int [] check = new int[max+1];
+
+        for(int i = 1; i<= max;i++){
+            check[i] = 0;
+        }
+
+        for(int i =0; i<n;i++){
+            if(arr[i]>0){
+                check[arr[i]] = 1;
+            }
+        }
+
+        for(int i =1;i<=max;i++){
+            if(check[i]==0){
+                System.out.println("answer: "+i);
+                break;
+            }
+        }
+    }
+
+    static void printPossibleSubArrays(int[] arr, int n){
+       System.out.println("printPossibleSubArrays"); 
+       for(int i = 0;i<n;i++){
+          for(int j = i; j<n;j++){
+             for(int k = i; k<=j; k++){
+                System.out.print(arr[k]+" "); 
+             }
+             System.out.println();
+          }
+       }
+    }
+
+    static void findSubArraywithMaximumSum(int [] arr , int n){
+        System.out.println("findSubArraywithMaximumSum");
+        
+    }
+
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int [] arr = new int[n];
         for(int i = 0;i<n;i++) arr[i] = sc.nextInt();
+        /*
         print_max_till_ith(arr,n);
         print_sum_of_each_subarray(arr, n);
         longest_arthimetic_subarray(arr,n);
         count_element_greater_than_previous_elements_and_following(arr,n);
         find_first_repeating_element(arr,n);
+        subarray_with_given_sum(arr,n,40); */
+        //find_missing_positive_number(arr,n);
+        printPossibleSubArrays(arr,n);
     }
 }
