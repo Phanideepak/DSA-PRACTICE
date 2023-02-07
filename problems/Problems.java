@@ -143,7 +143,7 @@ class Problems{
 
     static void findSubArraywithMaximumSum(int [] arr , int n){
         System.out.println("findSubArraywithMaximumSum");
-        
+                
     }
 
     public static void main(String[] args){
@@ -159,6 +159,6 @@ class Problems{
         find_first_repeating_element(arr,n);
         subarray_with_given_sum(arr,n,40); */
         //find_missing_positive_number(arr,n);
-        printPossibleSubArrays(arr,n);
+        //printPossibleSubArrays(arr,n);
     }
 }
