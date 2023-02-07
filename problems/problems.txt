@@ -1,0 +1,16 @@
+1.) Given an array of size n, For every i from 0 to n-1. Output max(a[0],a[1]...a[i])
+2.) 
+ pre requisite: Sub array -> continuous part of an array. No of sub arrays for array of size n is nc2 + n
+                Sub sequence -> derived from an array by selecting zero or more elements without changing the order of remaining elements.
+                No of elements = 2 ^ n.
+ 
+ problem: Output sum of each subarray for array of size n.
+
+ 3.)For  a given array of n elements. find length of longest continuos arthimetic subarray?
+
+ 4.) Find number of special elements of array ?
+     special element : It is greater than previous elements or greater than followng element.
+
+5.) Find first repeating element of array. (element with least first occurence index)   
+
+PENDING PROBLEM SECTIONS: 8.5, 8.6 (https://www.youtube.com/watch?v=0JYgnhnZFcE&list=PLfqMhTWNBTe0b2nM6JHVCnAkhQRGiZMSJ&index=25)

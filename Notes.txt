@@ -41,3 +41,7 @@ Operators:
  Data types:
 
  1.) Array: It is list of variable of same type.
+
+  pre requisite: Sub array -> continuous part of an array. No of sub arrays for array of size n is nc2 + n
+                Sub sequence -> derived from an array by selecting zero or more elements without changing the order of remaining elements.
+                No of elements = 2 ^ n.
