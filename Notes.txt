@@ -25,6 +25,10 @@ Operators:
    1.) When the function is called, the function signature and local variables are stored as stack frame in LIFO order in the memory.
        Top most frame is the active frame. When function is getting called, it will be added as frame to memory stack and if function 
        returns- frame will be popped from memory stack.
+   2.) Heap is used for storing class variables and objects. Heap is used for dynamic memory allocation.Size of heap is not fixed.
+       Size of heap is as big as virtual memory.
+   3.) For dynamic, memory allocation - variables needs to be freed.    
+
 
 
  Time Complexity:
