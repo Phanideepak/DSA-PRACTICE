@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//kadane algorithm.
 int main(){
     int n;
     cin>>n;
