@@ -51,3 +51,14 @@ Operators:
                 No of elements = 2 ^ n.
 
 Empty character ch = '\0'
+
+
+=> Kadane's Algorithm. (maximum subarray sum)
+1.) Iterate through elements.
+    if current sum is negative:
+       current sum =0
+    else 
+       current sum = current sum + a[i]
+       max = max(max,curren sum)
+                              
+
