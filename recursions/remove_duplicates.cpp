@@ -10,7 +10,10 @@ string removeDuplicate(string s){
     }
 
     string remainingString = removeDuplicate(s.substr(1));
-    if(s[0]==remainingString[0]){
+    // if first character of string is equal to first character of remaining string..
+    // Then exclude first character.
+    // else include first character.
+    if(s[0]== remainingString[0]){
         return remainingString;
     }
 
