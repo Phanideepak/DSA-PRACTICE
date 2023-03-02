@@ -14,4 +14,5 @@ void reverse(string s){
 int main(){
    string s;
    getline(cin,s);
+   reverse(s);
 }
