@@ -16,17 +16,19 @@ int main(){
     }
 
     int maxLength = 0;
-    int currLength = 1;
+    int currLength = 2;
+    int currDifference = a[0]-a[1];
 
-    for(int i=0;i<n-1;i++){
-       if(a[i]<a[i+1]){
-          currLength ++;
-       } else {
-          maxLength = max(maxLength,currLength);
-          currLength = 1;
-       }
+    for(int i=1;i<n-1;i++){
+        if(a[i]-a[i+1] == currDifference){
+            currLength++;
+        } else {
+            currDifference = a[i]-a[i+1];
+            maxLength = max(maxLength,currLength);
+            currLength = 2;
+        }
     }
-    maxLength = max(currLength,maxLength);
+    maxLength = max(maxLength,currLength);
     
     cout<<"Length of longest subarray: "<<maxLength<<endl;
 }
