@@ -132,6 +132,54 @@ void reverseKNodesthList(node* &head, int k){
 
 }
 
+bool detectCycle(node* head){
+    node* slow = head;
+    node* fast = head;
+
+    while(fast!=NULL && fast->next!=NULL){
+        fast = fast->next->next;
+        slow = slow->next;
+        if(fast==slow){
+            return true;
+        }
+    }
+    return false;
+}
+
+void buildCycle(node* &head){
+    node* p = head;
+    for(int i=1;i<=2;i++){
+        p=p->next;
+    }
+    node* q= head;
+
+    while(q->next!=NULL) q=q->next;
+
+    q->next = p;
+
+}
+
+void removeCycle(node* &head){
+    node* slow  = head;
+    node* fast = head;
+    do{
+       slow = slow->next;
+       fast = fast->next->next;
+    } while(fast!=slow);
+    
+    fast = head; // resetting fast pointer to the head of linked list.
+
+    // iterate the loop, till next node of fast pointer and second pointer are same.
+    // This next node will be start of the cycle.
+    while(slow->next!=fast->next){
+        slow=slow->next;
+        fast=fast->next;
+    }
+
+    // After above iterations, we will reach the point before cycle node.
+    slow->next = NULL;
+}
+
 void printList(node* head){
     node* iterateNode = head;
     while(iterateNode != NULL){
@@ -163,5 +211,9 @@ int main(){
     reverseLinkedList(head);
     printList(head);
     reverseKNodesthList(head,3);
+    printList(head);
+    buildCycle(head);
+    cout<<detectCycle(head)<<endl;
+    removeCycle(head);
     printList(head);        
 }
