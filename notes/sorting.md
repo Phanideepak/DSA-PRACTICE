@@ -40,3 +40,24 @@ for i:=1;i<n;i++
      a[j+1] = a[j]
      j--
    a[j+1] = current
+
+
+Merge Sort:
+
+
+merge_sort(int* a, int n, int l, int r){
+   if(l<r){
+      mid =(l+r)/2;
+      merge_sort(a,n,l,mid);
+      merge_sort(a,n,mid+1,r);
+      merge(a,n,l,mid,r);
+   }
+}
+
+merge(int* a, int n,int l, int mid, int r){
+   // create a extra space of length = r-l+1
+
+   i pointer in first half 
+   j pointer in second half
+   compare a[i] and a[j] then add the smaller element to temp array.
+}

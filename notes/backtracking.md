@@ -4,3 +4,5 @@ Def: Backtracking is an algorithmetic technique for solving recursive problems b
 -> Basic backtracking problem:
 
 1.) Rat in the maze: https://www.youtube.com/watch?v=4BBB0mvvbGA&list=PLfqMhTWNBTe0b2nM6JHVCnAkhQRGiZMSJ&index=43
+
+2.) N Queen Problem: https://www.youtube.com/watch?v=1OkZKjxRokU&list=PLfqMhTWNBTe0b2nM6JHVCnAkhQRGiZMSJ&index=45
