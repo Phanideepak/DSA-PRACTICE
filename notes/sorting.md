@@ -87,3 +87,12 @@ partition(int a[],int l,int r){
 
    return i+1;        
 }
+
+
+Inverion count using merge sort algo/approach: https://www.geeksforgeeks.org/inversion-count-in-array-using-merge-sort/
+
+Pending sorting algorithms:
+
+1. dnf sort
+2. wave sort
+3. 
