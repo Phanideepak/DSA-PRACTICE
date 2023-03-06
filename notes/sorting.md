@@ -61,3 +61,29 @@ merge(int* a, int n,int l, int mid, int r){
    j pointer in second half
    compare a[i] and a[j] then add the smaller element to temp array.
 }
+
+
+
+Quick Sort:
+
+unsorted: 6 3 9 5 2 8 7
+
+quickSort(int a[], int l, int r){
+   if(l<r){
+      int pivot = partition(arr,l,r);
+      quicksort(a,l,pivot-1);
+      quicksort(a,pivot+1,r)
+   }
+}
+
+partition(int a[],int l,int r){
+   pivot = a[r]
+   i = l - 1
+   for j=l to r-1:
+      if arr[j] < pivot;
+           i++;
+           swap(a[i],a[j]);
+   swap(a[i+1],a[r]);
+
+   return i+1;        
+}
