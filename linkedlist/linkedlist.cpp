@@ -38,6 +38,31 @@ void insertAtStart(node * &head, int data){
     head = dataNode;
 }
 
+void insertKEndNodesAtBegining(node* &head, int k){
+   //reach upto n-r position.
+   node* countPtr = head;
+   int n=0;
+   while(countPtr!=NULL){
+      n++;
+      countPtr = countPtr->next;
+   }
+
+   node* p = head; 
+   for(int i=1;i<n-k;i++){
+      p=p->next;
+   }
+   node* newHead = p->next;
+   p->next = NULL;
+
+   node* r = newHead;
+
+   while(r->next!=NULL) r=r->next;
+
+   r->next=head;
+
+   head = newHead;
+}
+
 void insertAtPosition(node* &head, int data, int p){
     if(p==1){
        insertAtStart(head,data);
@@ -159,6 +184,60 @@ void buildCycle(node* &head){
 
 }
 
+int length(node* head){
+    int count=0;
+    node* p=head;
+
+    while(p!=NULL){
+        count=count+1;
+        p=p->next;
+    }
+
+    return count;
+}
+
+void intersect(node* &head1, node* &head2, int pos){
+    node* p= head1;
+    for(int i=1;i<pos;i++){
+        p=p->next;
+    }
+    node* q = head2;
+    while(q->next!=NULL){
+        q=q->next;
+    }
+    q->next=p;
+}
+
+int intersection(node* head1, node* head2){
+    int l1 = length(head1);
+    int l2 = length(head2);
+    node* p;
+    node* q;
+
+    int d=abs(l1-l2);
+
+    if(l1>l2){
+      p=head1;
+      q=head2;        
+    } else{
+      p=head2;
+      q=head1;
+    }
+
+    while(d--){
+        p=p->next;
+    }
+
+    while(p!=NULL&&q!=NULL){
+        if(p==q){
+            return p->data;
+        }
+        p=p->next;
+        q=q->next;
+    }
+    return -1;
+}
+
 void removeCycle(node* &head){
     node* slow  = head;
     node* fast = head;
@@ -188,6 +267,79 @@ void printList(node* head){
     }cout<<endl;
 }
 
+void performIntersectionTestCase(){
+    node* head1=NULL;
+    node* head2=NULL;
+    for(int i=101;i<=105;i++){
+        insertAtTail(head1,i);
+    }
+    for(int i=10;i<=13;i++){
+        insertAtTail(head2,i);
+    }
+
+
+
+    intersect(head1,head2,3);
+
+    cout<<"intersection data: "<<intersection(head1,head2)<<endl;
+}
+
+node* mergeLists(node* head1, node* head2){
+    node* p = head1;
+    node* q = head2;
+
+    node* answer = NULL;
+
+    while(p!=NULL && q!=NULL){
+        if(p->data>q->data){
+           insertAtTail(answer, q->data);
+           q = q->next;
+        } else {
+           insertAtTail(answer, p->data);
+           p=p->next;
+        }
+    }
+ 
+
+    while(p!=NULL){
+        insertAtTail(answer,p->data);
+        p = p->next;
+    }
+   
+
+    while(q!=NULL){
+        insertAtTail(answer, q->data);
+        q = q->next;
+    }
+
+    return answer;
+}
+
+void performMergeSortScenario(){
+    int n;
+    cin >> n;
+    node* head1 = NULL;
+    node* head2 = NULL;
+    for(int i=1;i<=n;i++){
+        int x;
+        cin>>x;
+        insertAtTail(head1,x);
+    } 
+
+    int m;
+    cin>>m;
+    
+    for(int i=1;i<=m;i++){
+        int x;
+        cin>>x;
+        insertAtTail(head2,x);
+    }
+    
+    node* resultantHead = mergeLists(head1,head2);
+
+    printList(resultantHead);
+    
+}
 
 int main(){
     node* head = NULL;
@@ -215,5 +367,14 @@ int main(){
     buildCycle(head);
     cout<<detectCycle(head)<<endl;
     removeCycle(head);
-    printList(head);        
+    printList(head);
+    insertKEndNodesAtBegining(head, 3);
+    printList(head);
+    insertKEndNodesAtBegining(head,4);
+    printList(head);
+
+    performIntersectionTestCase();
+
+    performMergeSortScenario();
+
 }
