@@ -284,6 +284,27 @@ void performIntersectionTestCase(){
     cout<<"intersection data: "<<intersection(head1,head2)<<endl;
 }
 
+void evenAfterOddPosition(node* &head){
+    node* odd = head;
+    node* even = head->next;
+    node* evenStart = even;
+
+    while(odd->next!=NULL && even->next!=NULL){
+        odd->next = even->next;
+        odd =  odd->next;
+
+        even->next = odd->next;
+        even = even->next;
+    }
+
+    odd->next = evenStart;
+
+    if(odd->next != NULL){
+        even->next = NULL;
+    }
+    
+}
+
 node* mergeLists(node* head1, node* head2){
     node* p = head1;
     node* q = head2;
@@ -373,8 +394,12 @@ int main(){
     insertKEndNodesAtBegining(head,4);
     printList(head);
 
-    performIntersectionTestCase();
+   // performIntersectionTestCase();
 
-    performMergeSortScenario();
+   // performMergeSortScenario();
+
+    evenAfterOddPosition(head);
+
+    printList(head);
 
 }
