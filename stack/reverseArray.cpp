@@ -3,6 +3,9 @@
 
 using namespace std;
 
+
+using namespace std;
+
 int main(){
     int a[] = {11,22,44,55,34,98,97,65,59};
     int n = 9;
