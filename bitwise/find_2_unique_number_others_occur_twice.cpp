@@ -2,6 +2,35 @@
 
 using namespace std;
 
+
+
+/**
+ * Optimised bitmask approach
+*/
+
+vector<int> singleNumber(vector<int>& nums) {
+        unsigned int sum = 0;
+        for(int i=0;i<nums.size();i++){
+            sum = sum ^ nums[i];
+        }
+        int setBit = sum & (-1*sum);
+        int f=0;
+        int s=0;
+        for(int i=0;i<nums.size();i++){
+            if((setBit&nums[i])>0){
+                f=f^nums[i];
+            } else {
+                s=s^nums[i];
+            } 
+        } 
+        
+        vector<int> o;
+        o.push_back(f);
+        o.push_back(s);
+        return o;
+}
+
+
 int getBit(int n, int posIndex){
     return (n & (1<<posIndex))>0;
 }

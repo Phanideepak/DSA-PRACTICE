@@ -17,6 +17,24 @@ Infix - Postfix - Prefix expressions:
     Operator Precedence: (), ^, *,/, +,-
 
 
+Inflix - Postflix conversion:
+
+S= (a-b/c)*(a/k-1)
+
+if operand
+   print
+
+if '('
+  push to stack
+
+if ')'
+  pop from stack and print until ( is found in stack top. pop the ( in last.
+
+if operator
+  pop from stack and print until an operator with less precedence is found in stack top. push operator to stack. 
+
+
+
 
 
 
