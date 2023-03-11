@@ -34,6 +34,18 @@ if operator
   pop from stack and print until an operator with less precedence is found in stack top. push operator to stack. 
 
 
+Queue Implementation - approach 1 (making push method costly):
+
+1.) Take 2 queues. Push element to second queue and transfer elements from first queue to second queue.
+2.) Swap between second and first queue.
+
+
+Queue Implementation - approach 2 (making pop method costly)
+1.) Take 2 queues. Push element to q1.
+2.) Transfer the elements to the second queue till size of first queue becomes 1.
+3.) Swap between q1 and q2.
+
+
 
 
 
