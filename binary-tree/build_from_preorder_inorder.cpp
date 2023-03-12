@@ -24,13 +24,11 @@ int search(vector<int> a, int s, int e, int key){
    return -1;
 }
 
-Tree* buildTree(vector<int> preorder,vector<int> inorder, int start, int end){
-    static int i = 0;
+Tree* buildTree(vector<int> preorder,vector<int> inorder, int start, int end,int& i){
 
     if(start > end){
         return NULL;
     }
-
     int curr = preorder[i];
     i = i + 1;
 
@@ -43,19 +41,27 @@ Tree* buildTree(vector<int> preorder,vector<int> inorder, int start, int end){
 
     int pos = search(inorder, start, end, curr);
 
-    tree->left  = buildTree(preorder,  inorder, start, pos-1);
-    tree->right = buildTree(preorder, inorder, pos+1, end);
+    tree->left  = buildTree(preorder,  inorder, start, pos-1,i);
+    tree->right = buildTree(preorder, inorder, pos+1, end,i);
 
     return tree;
 }
 
 Tree* build(vector<int> preorder,vector<int> inorder){
-    return buildTree(preorder,inorder,0,inorder.size()-1);
+    int startIndex = 0;
+    return buildTree(preorder,inorder,0,inorder.size()-1,startIndex);
+}
+
+void inorderPrint(Tree* tree){
+    if(tree == NULL) return;
+    inorderPrint(tree->left);
+    cout<<tree->data<<" ";
+    inorderPrint(tree->right);
 }
 
 int main(){
     vector<int> preorder  = {1,2,4,3,5};
     vector<int> inorder = {4,2,1,5,3};
     Tree * tree = build(preorder,inorder);
-    cout<<tree->data<<endl;   
+    inorderPrint(tree);   
 }
